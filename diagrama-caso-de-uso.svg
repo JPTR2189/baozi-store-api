@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1010" viewBox="0 0 1560 1010" font-family="Helvetica, Arial, sans-serif">
+<rect width="1560" height="1010" fill="#ffffff"/>
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2933"/></marker></defs>
+<rect x="300" y="95" width="1200" height="835" rx="10" fill="#ffffff" stroke="#1f2933" stroke-width="2.5"/>
+<text x="900" y="145" text-anchor="middle" font-size="28" font-weight="bold" fill="#1f2933">API REST &#8211; Baozi Store</text>
+<circle cx="130" cy="358" r="24" fill="#ffffff" stroke="#1f2933" stroke-width="3"/>
+<line x1="130" y1="382" x2="130" y2="452" stroke="#1f2933" stroke-width="3"/>
+<line x1="90" y1="408" x2="170" y2="408" stroke="#1f2933" stroke-width="3"/>
+<line x1="130" y1="452" x2="98" y2="510" stroke="#1f2933" stroke-width="3"/>
+<line x1="130" y1="452" x2="162" y2="510" stroke="#1f2933" stroke-width="3"/>
+<text x="130" y="550" text-anchor="middle" font-size="21" font-weight="bold" fill="#1f2933">Usu&#225;rio da API</text>
+<text x="130" y="575" text-anchor="middle" font-size="15" fill="#5b6b7c">(ator principal)</text>
+<line x1="176" y1="416" x2="376" y2="250" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="376" y2="342" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="376" y2="434" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="376" y2="526" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="376" y2="618" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="706" y2="250" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="706" y2="342" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="706" y2="434" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="706" y2="526" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="706" y2="618" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="1036" y2="250" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="1036" y2="342" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="1036" y2="434" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="1036" y2="526" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<line x1="176" y1="416" x2="1036" y2="618" stroke="#9aa5b1" stroke-width="1.3" opacity="0.75"/>
+<text x="520" y="192" text-anchor="middle" font-size="17" font-weight="bold" letter-spacing="3" fill="#5b6b7c">CLIENTE</text>
+<line x1="450" y1="203" x2="590" y2="203" stroke="#5b6b7c" stroke-width="1" opacity="0.5"/>
+<ellipse cx="520" cy="250" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="520" y="257" text-anchor="middle" font-size="19" fill="#1f2933">Cadastrar cliente</text>
+<ellipse cx="520" cy="342" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="520" y="349" text-anchor="middle" font-size="19" fill="#1f2933">Listar clientes</text>
+<ellipse cx="520" cy="434" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="520" y="441" text-anchor="middle" font-size="19" fill="#1f2933">Consultar cliente por ID</text>
+<ellipse cx="520" cy="526" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="520" y="533" text-anchor="middle" font-size="19" fill="#1f2933">Atualizar cliente</text>
+<ellipse cx="520" cy="618" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="520" y="625" text-anchor="middle" font-size="19" fill="#1f2933">Excluir cliente</text>
+<text x="850" y="192" text-anchor="middle" font-size="17" font-weight="bold" letter-spacing="3" fill="#5b6b7c">PRODUTO</text>
+<line x1="780" y1="203" x2="920" y2="203" stroke="#5b6b7c" stroke-width="1" opacity="0.5"/>
+<ellipse cx="850" cy="250" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="850" y="257" text-anchor="middle" font-size="19" fill="#1f2933">Cadastrar produto</text>
+<ellipse cx="850" cy="342" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="850" y="349" text-anchor="middle" font-size="19" fill="#1f2933">Listar produtos</text>
+<ellipse cx="850" cy="434" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="850" y="441" text-anchor="middle" font-size="19" fill="#1f2933">Consultar produto por ID</text>
+<ellipse cx="850" cy="526" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="850" y="533" text-anchor="middle" font-size="19" fill="#1f2933">Atualizar produto</text>
+<ellipse cx="850" cy="618" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="850" y="625" text-anchor="middle" font-size="19" fill="#1f2933">Excluir produto</text>
+<text x="1180" y="192" text-anchor="middle" font-size="17" font-weight="bold" letter-spacing="3" fill="#5b6b7c">PEDIDO</text>
+<line x1="1110" y1="203" x2="1250" y2="203" stroke="#5b6b7c" stroke-width="1" opacity="0.5"/>
+<ellipse cx="1180" cy="250" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="1180" y="257" text-anchor="middle" font-size="19" fill="#1f2933">Registrar pedido</text>
+<ellipse cx="1180" cy="342" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="1180" y="349" text-anchor="middle" font-size="19" fill="#1f2933">Listar pedidos</text>
+<ellipse cx="1180" cy="434" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="1180" y="441" text-anchor="middle" font-size="19" fill="#1f2933">Consultar pedido por ID</text>
+<ellipse cx="1180" cy="526" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="1180" y="533" text-anchor="middle" font-size="19" fill="#1f2933">Atualizar pedido</text>
+<ellipse cx="1180" cy="618" rx="148" ry="34" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="1180" y="625" text-anchor="middle" font-size="19" fill="#1f2933">Excluir pedido</text>
+<ellipse cx="1180" cy="800" rx="164" ry="40" fill="#eef4fb" stroke="#3f6fa8" stroke-width="2"/>
+<text x="1180" y="796" text-anchor="middle" font-size="18" fill="#1f2933">Validar cliente, produto</text>
+<text x="1180" y="820" text-anchor="middle" font-size="18" fill="#1f2933">e disponibilidade em estoque</text>
+<path d="M 1328 250 H 1430 V 800 H 1346" fill="none" stroke="#1f2933" stroke-width="2" stroke-dasharray="9,6" marker-end="url(#seta)"/>
+<text x="1420" y="525" text-anchor="end" font-size="17" font-style="italic" fill="#1f2933">&#171;include&#187;</text>
+<text x="330" y="902" font-size="15" fill="#5b6b7c">Nota&#231;&#227;o UML &#8212; ator, casos de uso, associa&#231;&#245;es, fronteira do sistema e relacionamento &#171;include&#187;</text>
+</svg>

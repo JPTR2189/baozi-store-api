@@ -1,0 +1,23 @@
+# Build do Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Banco de dados H2 gerado em tempo de execucao
+data/
+*.mv.db
+*.trace.db
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
