@@ -4,7 +4,7 @@ Atividade Prática da disciplina **Desenvolvimento Web Back-End** — Centro Uni
 
 API REST que informatiza o controle de **clientes**, **produtos** e **pedidos** da Baozi Store, uma pequena loja de pãozinho chinês.
 
-> **Autor:** `NOME_DO_ALUNO` — RU `0000000`
+> **Autor:** `Jean Pierre` — RU `4378136`
 
 ---
 
@@ -126,7 +126,7 @@ Base: `http://localhost:8080` · Formato: `application/json`
 
 ```json
 POST /api/clientes
-{ "nome": "Maria Silva123456", "clienteDesde": "2026-08-20" }
+{ "nome": "Jean4378136", "clienteDesde": "2026-08-20" }
 ```
 
 ### Produtos — `/api/produtos`
@@ -165,7 +165,7 @@ Resposta:
 {
   "id": 1,
   "clienteId": 1,
-  "clienteNome": "Maria Silva123456",
+  "clienteNome": "Jean4378136",
   "produtoId": 1,
   "produtoNome": "Baozi de Porco",
   "precoUnitario": 8.50,
