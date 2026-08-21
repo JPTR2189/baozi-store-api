@@ -1,6 +1,8 @@
 package com.baozistore.api.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,35 +11,28 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
-/**
- * Entidade Cliente - representa quem compra na Baozi Store.
- *
- * Mapeada para a tabela "cliente" conforme o DER do enunciado:
- *   id (Long) | nome (String) | clienteDesde (LocalDate)
- */
+// Entidade que representa um cliente da Baozi Store.
 @Entity
 @Table(name = "cliente")
-public class Cliente {
+public class Cliente implements Serializable {
 
-    /** Chave primaria gerada pelo proprio banco (auto-incremento). */
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /** Nome do cliente. Obrigatorio. */
     @NotBlank(message = "O nome do cliente e obrigatorio")
+    @Size(max = 120, message = "O nome deve ter no maximo 120 caracteres")
     @Column(name = "nome", nullable = false, length = 120)
     private String nome;
 
-    /**
-     * Data em que a pessoa passou a ser cliente da loja.
-     * Se nao for informada no POST, o controller assume a data de hoje.
-     */
+    // Se nao informada no POST, o service assume a data de hoje.
     @Column(name = "cliente_desde", nullable = false)
     private LocalDate clienteDesde;
 
-    /** Construtor vazio exigido pela especificacao JPA. */
     public Cliente() {
     }
 
@@ -68,6 +63,18 @@ public class Cliente {
 
     public void setClienteDesde(LocalDate clienteDesde) {
         this.clienteDesde = clienteDesde;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cliente other)) return false;
+        return id != null && id.equals(other.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 
     @Override

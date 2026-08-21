@@ -4,17 +4,7 @@ import java.math.BigDecimal;
 
 import com.baozistore.api.model.Pedido;
 
-/**
- * Corpo JSON devolvido pelos endpoints de /api/pedidos.
- *
- * Achata a associacao @ManyToOne para que o print do Postman mostre de forma
- * legivel, em um unico bloco, exatamente o que o enunciado pede que apareca:
- * o cliente que comprou, o produto comprado e a quantidade.
- *
- * O campo valorTotal e DERIVADO (preco unitario x quantidade). Ele e calculado
- * aqui, na saida, e NAO e uma coluna da tabela pedido - o modelo continua fiel
- * ao DER do enunciado.
- */
+// DTO de saida que achata as associacoes do pedido e calcula o valor total.
 public class PedidoResponse {
 
     private Long id;
@@ -29,7 +19,6 @@ public class PedidoResponse {
     public PedidoResponse() {
     }
 
-    /** Converte a entidade JPA na representacao JSON de saida. */
     public static PedidoResponse de(Pedido pedido) {
         PedidoResponse dto = new PedidoResponse();
         dto.id = pedido.getId();
@@ -51,35 +40,12 @@ public class PedidoResponse {
         return dto;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public Long getClienteId() {
-        return clienteId;
-    }
-
-    public String getClienteNome() {
-        return clienteNome;
-    }
-
-    public Long getProdutoId() {
-        return produtoId;
-    }
-
-    public String getProdutoNome() {
-        return produtoNome;
-    }
-
-    public BigDecimal getPrecoUnitario() {
-        return precoUnitario;
-    }
-
-    public Integer getQuantidade() {
-        return quantidade;
-    }
-
-    public BigDecimal getValorTotal() {
-        return valorTotal;
-    }
+    public Long getId() { return id; }
+    public Long getClienteId() { return clienteId; }
+    public String getClienteNome() { return clienteNome; }
+    public Long getProdutoId() { return produtoId; }
+    public String getProdutoNome() { return produtoNome; }
+    public BigDecimal getPrecoUnitario() { return precoUnitario; }
+    public Integer getQuantidade() { return quantidade; }
+    public BigDecimal getValorTotal() { return valorTotal; }
 }

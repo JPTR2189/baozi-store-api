@@ -1,9 +1,6 @@
 package com.baozistore.api.exception;
 
-/**
- * Lancada quando um recurso solicitado por ID nao existe no banco.
- * O GlobalExceptionHandler a converte em uma resposta HTTP 404 Not Found.
- */
+// Lancada quando um recurso solicitado por ID nao existe no banco (HTTP 404).
 public class RecursoNaoEncontradoException extends RuntimeException {
 
     public RecursoNaoEncontradoException(String mensagem) {

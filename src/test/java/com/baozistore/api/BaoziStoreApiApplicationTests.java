@@ -18,12 +18,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * Teste de integracao do fluxo completo da API:
- * cadastrar cliente -> cadastrar produto -> registrar pedido -> consultar -> apagar.
- *
- * Roda contra um H2 em memoria (perfil "test"), sem tocar no banco da aplicacao.
- */
+// Teste de integracao do fluxo completo da API contra H2 em memoria.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
@@ -34,7 +29,6 @@ class BaoziStoreApiApplicationTests {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    /** Le o campo "id" do corpo JSON de uma resposta. */
     private long idDaResposta(MvcResult resultado) throws Exception {
         JsonNode corpo = objectMapper.readTree(resultado.getResponse().getContentAsString());
         return corpo.get("id").asLong();
@@ -42,13 +36,10 @@ class BaoziStoreApiApplicationTests {
 
     @Test
     void contextoDaAplicacaoCarrega() {
-        // Se a injecao de dependencias, o DataSource ou o mapeamento JPA
-        // estiverem quebrados, este teste falha antes de qualquer assercao.
     }
 
     @Test
     void fluxoCompletoDeCadastroEPedido() throws Exception {
-        // 1) POST /api/clientes -> 201 Created
         MvcResult respostaCliente = mockMvc.perform(post("/api/clientes")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"nome\":\"Cliente de Teste\",\"clienteDesde\":\"2026-01-15\"}"))
@@ -58,7 +49,6 @@ class BaoziStoreApiApplicationTests {
                 .andReturn();
         long clienteId = idDaResposta(respostaCliente);
 
-        // 2) POST /api/produtos -> 201 Created
         MvcResult respostaProduto = mockMvc.perform(post("/api/produtos")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"nome\":\"Baozi de Teste\",\"preco\":3.50,\"estoque\":true}"))
@@ -68,7 +58,6 @@ class BaoziStoreApiApplicationTests {
                 .andReturn();
         long produtoId = idDaResposta(respostaProduto);
 
-        // 3) POST /api/pedidos -> 201 Created, com os dados do cliente e do produto
         MvcResult respostaPedido = mockMvc.perform(post("/api/pedidos")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"clienteId\":" + clienteId
@@ -81,21 +70,17 @@ class BaoziStoreApiApplicationTests {
                 .andReturn();
         long pedidoId = idDaResposta(respostaPedido);
 
-        // 4) GET /api/pedidos -> 200 OK
         mockMvc.perform(get("/api/pedidos"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").exists());
 
-        // 5) GET /api/pedidos/{id} -> 200 OK
         mockMvc.perform(get("/api/pedidos/" + pedidoId))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(pedidoId));
 
-        // 6) DELETE /api/pedidos/{id} -> 204 No Content
         mockMvc.perform(delete("/api/pedidos/" + pedidoId))
                 .andExpect(status().isNoContent());
 
-        // 7) GET do pedido apagado -> 404 Not Found, no formato padrao de erro
         mockMvc.perform(get("/api/pedidos/" + pedidoId))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.status").value(404));

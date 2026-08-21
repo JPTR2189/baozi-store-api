@@ -1,6 +1,8 @@
 package com.baozistore.api.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,38 +13,31 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
-/**
- * Entidade Produto - o pao chines vendido pela Baozi Store.
- *
- * Mapeada para a tabela "produto" conforme o DER do enunciado:
- *   id (Long) | nome (String) | preco (BigDecimal) | estoque (Boolean)
- */
+// Entidade que representa um produto vendido pela Baozi Store.
 @Entity
 @Table(name = "produto")
-public class Produto {
+public class Produto implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "O nome do produto e obrigatorio")
+    @Size(max = 120, message = "O nome deve ter no maximo 120 caracteres")
     @Column(name = "nome", nullable = false, length = 120)
     private String nome;
 
-    /**
-     * Preco unitario. Usa-se BigDecimal, e nao double, porque valores
-     * monetarios exigem precisao decimal exata.
-     */
+    // BigDecimal garante precisao decimal exata para valores monetarios.
     @NotNull(message = "O preco do produto e obrigatorio")
     @Positive(message = "O preco deve ser maior que zero")
     @Column(name = "preco", nullable = false, precision = 10, scale = 2)
     private BigDecimal preco;
 
-    /**
-     * Indica se o produto esta disponivel para venda.
-     * true = disponivel em estoque; false = indisponivel.
-     */
+    // true = disponivel em estoque; false = indisponivel.
     @Column(name = "estoque", nullable = false)
     private Boolean estoque;
 
@@ -85,6 +80,18 @@ public class Produto {
 
     public void setEstoque(Boolean estoque) {
         this.estoque = estoque;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Produto other)) return false;
+        return id != null && id.equals(other.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 
     @Override

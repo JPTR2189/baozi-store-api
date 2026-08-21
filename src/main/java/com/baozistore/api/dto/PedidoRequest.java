@@ -3,14 +3,7 @@ package com.baozistore.api.dto;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
-/**
- * Corpo JSON esperado no POST e no PUT de /api/pedidos.
- *
- * Mantem o contrato de entrada simples e igual ao DER
- * (clienteId, produtoId, quantidade), sem exigir objetos aninhados:
- *
- *   { "clienteId": 1, "produtoId": 1, "quantidade": 10 }
- */
+// DTO de entrada para criacao e atualizacao de pedidos.
 public class PedidoRequest {
 
     @NotNull(message = "O clienteId e obrigatorio")
